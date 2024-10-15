@@ -14,16 +14,27 @@ const Filter = ({ students, setFilteredData }) => {
       const { lastName, firstName, course, birthdate } = student;
       const birthDateObj = new Date(birthdate);
 
-      const matchesText =
-        lastName.toLowerCase().includes(searchText.toLowerCase()) ||
-        firstName.toLowerCase().includes(searchText.toLowerCase()) ||
-        course.toLowerCase().includes(searchText.toLowerCase()) ||
-        String(calculateAge(birthdate)).includes(searchText);
+      const searchLower = searchText.toLowerCase();
 
+      // Check name match (allow partial match)
+      const matchesName =
+        lastName.toLowerCase().includes(searchLower) ||
+        firstName.toLowerCase().includes(searchLower);
+      
+      // Check course match (partial match)
+      const matchesCourse = course.toLowerCase().includes(searchLower);
+      
+      // Check age match (partial match)
+      const matchesAge = String(calculateAge(birthdate)).includes(searchLower);
+      
+      // Check if it matches the text filter (name, course, or age)
+      const matchesText = matchesName || matchesCourse || matchesAge;
+      
+      // Check if it matches the date range
       const matchesDate =
         (!minDate || new Date(minDate) <= birthDateObj) &&
         (!maxDate || new Date(maxDate) >= birthDateObj);
-
+      
       return matchesText && matchesDate;
     });
 
