@@ -1,6 +1,6 @@
 import React from "react";
 
-const TableContainer = ({ children, props }) => {
+const TableContainer = ({ children }) => {
   return <table>{children}</table>;
 };
 
