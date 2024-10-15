@@ -8,25 +8,25 @@ function App() {
       lastName: "Doe",
       firstName: "John",
       course: "IT",
-      birthdate: "1995/05/10",
+      birthdate: "1995-05-10",
     },
     {
-      lastName: "Doe",
-      firstName: "John",
+      lastName: "Den",
+      firstName: "Mark",
       course: "IS",
-      birthdate: "1995/05/10",
+      birthdate: "1995-05-10",
     },
     {
-      lastName: "Smith",
+      lastName: "Foster",
       firstName: "Jane",
       course: "CS",
-      birthdate: "1998/08/20",
+      birthdate: "1998-08-20",
     },
     {
       lastName: "Brown",
-      firstName: "Lisa",
+      firstName: "Riza",
       course: "DS",
-      birthdate: "1997/07/15",
+      birthdate: "1997-07-15",
     },
     // Add more students here
   ];
